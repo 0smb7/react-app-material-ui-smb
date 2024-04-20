@@ -4,36 +4,22 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Title from './components/title.jsx';
 import Data from './data/data.js';
+import MediaCard from './components/employeeCard.jsx';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-  console.log(Data);
+  const [onLeave, setLeave] = useState(true);
+  console.log(onLeave);
+  /* console.log(Data); */
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <Title name={Data[0].firstName} />
-      <Title last={Data[0].lastName} />
-
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Container fixed>
+    <Button variant="contained">Active</Button>
+    <Button variant="outlined">On Leave</Button>
+    <MediaCard data={Data}/>
+    </Container>
+  );
 }
 
 export default App
