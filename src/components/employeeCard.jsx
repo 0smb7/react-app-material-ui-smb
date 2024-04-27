@@ -13,12 +13,12 @@ import Stack from '@mui/material/Stack';
 export default function MediaCard( { data }) {
   return (
     <>{data.map((item, index) => (
-      <Card sx={{ maxWidth: 345, padding: 7 }}>
+      <Card sx={{ maxWidth: 345, padding: 7, marginBottom: 2 }}>
         <Box sx={{ paddingTop: 2, paddingBottom: 2 }}>
           <CardMedia
             sx={{ 
               height: 300, 
-              width: 300, 
+              width: 345, 
               backgroundSize: "contain", 
               margin: "auto" }}
               image={`/react-app-material-ui-smb/${item.image}`}
